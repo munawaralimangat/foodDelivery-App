@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
  import {LOGO_URL} from '../utils/constant'
+ import { Link } from 'react-router-dom';
 
 const Header = ()=>{
     const [heading,setHeading] = useState("FOOD BAZAR")
@@ -22,10 +23,10 @@ return (
         <h1 onClick={toggleHeading} className={heading=="FOOD BAZAR"? "red": "black"}>{heading}</h1>
         <div className="nav-items">
             <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Contact</li>
-                <li>Cart</li>
+                <li><Link to='/'>          Home       </Link></li>
+                <li><Link to='/about'>     About Us   </Link></li>
+                <li><Link to='/contactUs'> Contact Us </Link></li>
+                <li><Link to='/cart'>      Cart       </Link></li>
                 <button onClick={()=>{btnName==='Login'?changeBtn('Logout'):changeBtn('Login')}} className='login'>{btnName}</button>
             </ul>
         </div>
